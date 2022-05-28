@@ -15,7 +15,10 @@ app.use(express.static('public'));
 // });
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', {
+        nombre: 'Andrés Mata',
+        titulo: 'Curso de Node'
+    });
 });
 
 app.get('/hola-mundo', (req, res) => {
