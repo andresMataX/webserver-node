@@ -24,10 +24,6 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/hola-mundo', (req, res) => {
-    res.send('Saludando al mundo');
-});
-
 // Ruta para quitar el .html de generic
 app.get('/generic', (req, res) => {
     res.sendFile(__dirname + '/public/generic.html');
