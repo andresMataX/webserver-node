@@ -6,16 +6,17 @@ const port = 8080;
 // Servir contenido estático
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send('Home Page');
-});
+// No se ejecuta debido al uso del middleware
+// app.get('/', (req, res) => {
+//     res.send('Home Page');
+// });
 
 app.get('/hola-mundo', (req, res) => {
     res.send('Saludando al mundo');
 });
 
 app.get('*', (req, res) => {
-    res.send('404 | Page Not Found');
+    res.sendFile(__dirname + '/public/404.html');
 });
 
 app.listen(port, () => {
