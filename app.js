@@ -25,12 +25,27 @@ app.get('/', (req, res) => {
 });
 
 // Ruta para quitar el .html de generic
+// app.get('/generic', (req, res) => {
+//     res.sendFile(__dirname + '/public/generic.html');
+// });
+
 app.get('/generic', (req, res) => {
-    res.sendFile(__dirname + '/public/generic.html');
+    res.render('generic', {
+        nombre: 'Andrés Mata',
+        titulo: 'Curso de Node'
+    });
 });
 
+
+// app.get('/elements', (req, res) => {
+//     res.sendFile(__dirname + '/public/elements.html');
+// });
+
 app.get('/elements', (req, res) => {
-    res.sendFile(__dirname + '/public/elements.html');
+    res.render('elements', {
+        nombre: 'Andrés Mata',
+        titulo: 'Curso de Node'
+    });
 });
 
 app.get('*', (req, res) => {
