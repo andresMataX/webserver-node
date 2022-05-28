@@ -2,11 +2,14 @@ const http = require('http');
 
 http.createServer((req, res) => {
 
-    console.log(req);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
 
-    res.writeHead(404);
+    const persona = {
+        id: 1,
+        nombre: 'Andrés'
+    }
 
-    res.write('404 | Page Not Found');
+    res.write(JSON.stringify(persona));
     res.end();
 
 }).listen(8080);
