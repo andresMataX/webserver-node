@@ -2,7 +2,11 @@ const http = require('http');
 
 http.createServer((req, res) => {
 
-    res.write('Hola mundo');
+    console.log(req);
+
+    res.writeHead(404);
+
+    res.write('404 | Page Not Found');
     res.end();
 
 }).listen(8080);
